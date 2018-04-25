@@ -1,7 +1,7 @@
 
 module ALU_Test();
 reg [31:0] a, b;
-reg [3:0] select;
+reg [2:0] select;
 wire [31:0] OUT;
 wire zeroflag;
 initial begin

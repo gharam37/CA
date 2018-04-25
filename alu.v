@@ -1,7 +1,7 @@
 `timescale 1ns / 1ps
 module ALU(out,in1,in2,control,zero);
 input [31:0] in1, in2;
-input [3:0] control;
+input [2:0] control;
 output reg [31:0] out;
 output reg zero;
 always @ (in1, in2, control)
@@ -16,28 +16,28 @@ always @ (in1,in2,control) begin
 	
 	case(control)
 
-	4'b0000: begin
+	3'b000: begin
 		out = in1 + in2;
 	end
 
-	4'b0001: begin
+	3'b001: begin
 		out = in1 - in2;
 	end
 
-	4'b0010: begin
+	3'b010: begin
 		out = in1 & in2;
 	end
 
-	4'b0011: begin
+	3'b011: begin
 		out = in1 | in2;
 	end
-	4'b0100: begin
+	3'b100: begin
 		out = in2 << in1;
 	end
-	4'b0101: begin
+	3'b101: begin
 		out = in1 >>in2;
 	end
-	4'b0110: begin
+	3'b110: begin
 		if(in1 < in2) begin
 			out = 32'd1;
 		end
