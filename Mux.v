@@ -4,7 +4,7 @@ module Mux(out,in1,in2,select);
 	input select;
 	output reg [31:0] out;
     always @(in1,in2,select) begin
-      assign out = (select == 0) ?  in1 : in2;  
+      out <= (select == 0) ?  in1 : in2;  
     end
 
 endmodule

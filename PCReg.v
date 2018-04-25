@@ -10,7 +10,7 @@ module PCRegister(out,in,clk);
 
     always @ (posedge clk)
     begin
-        out = in;
+        out <= in;
     end
     
 endmodule
