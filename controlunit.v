@@ -116,7 +116,7 @@ always @ (opcode or func ) begin
       
    end
 //BEQ
-X 1 0 X 0 0 0
+
 if( opcode == 6'b000100) begin
    
          RegDest =  0;
