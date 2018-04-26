@@ -2,7 +2,7 @@
 module ControlUnit(
     input [5:0] opCode, func,
     output reg RegDest, Branch, MemRead ,MemtoReg, MemWrite, ALUSrc, RegWrite
-    output reg [3:0] aluc
+    output reg [2:0] aluc
     );
 
 always @ (opcode or func ) begin
@@ -21,7 +21,7 @@ always @ (opcode or func ) begin
          MemWrite = 0;
          ALUSrc = 0;
          RegWrite =  1;
-         
+         aluc=3'b000;
       
         end
    
@@ -35,7 +35,7 @@ always @ (opcode or func ) begin
          MemWrite = 0;
          ALUSrc = 0;
          RegWrite =  1;
-       
+         aluc=3'b001;
        
          end 
    
@@ -50,7 +50,7 @@ always @ (opcode or func ) begin
          MemWrite = 0;
          ALUSrc = 0;
          RegWrite =  1;
-      
+         aluc=3'b100;
       
       
          end
@@ -66,7 +66,7 @@ always @ (opcode or func ) begin
          MemWrite = 0;
          ALUSrc = 0;
          RegWrite =  1;
-      
+         aluc=3'b101;
          end 
         
       //AND
@@ -79,7 +79,7 @@ always @ (opcode or func ) begin
          MemWrite = 0;
          ALUSrc = 0;
          RegWrite =  1;
-      
+         aluc=3'b010;
       
         end
       
@@ -94,7 +94,7 @@ always @ (opcode or func ) begin
          MemWrite = 0;
          ALUSrc = 0;
          RegWrite =  1;
-      
+         aluc=3'b011;
         end 
       
       
@@ -110,7 +110,7 @@ always @ (opcode or func ) begin
          MemWrite = 0;
          ALUSrc = 0;
          RegWrite =  1;
-      
+         aluc=3'b110;
          end
       
       
@@ -140,7 +140,8 @@ if( opcode == 6'b000100) begin
          MemWrite = 0;
          ALUSrc = 1;
          RegWrite =  1;
-   
+         aluc=3'b000;
+         
    end
    // LW 
    if( opcode == 6'b100011) begin
@@ -183,6 +184,7 @@ if( opcode == 6'b000100) begin
          MemWrite = 0;
          ALUSrc = 1;
          RegWrite =  1;
+         aluc=3'b010;
    end
    
    // ori
@@ -194,6 +196,7 @@ if( opcode == 6'b000100) begin
          MemWrite = 0;
          ALUSrc = 1;
          RegWrite =  1;
+         aluc=3'b011;
    end
 	
 
