@@ -1,5 +1,5 @@
 `timescale 1ns / 1ps
-module IFIDReg(instOut,inc incinstOut,incinst,instIn,clk);
+module IFIDReg(instOut,incinstOut,incinst,instIn,clk);
     input clk;
     input [31:0] instIn,incinst;
     output reg [31:0] instOut,incinstOut;
