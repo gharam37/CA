@@ -1,8 +1,8 @@
 `timescale 1ns / 1ps
 
 module dataMemory(
-	input [31:0] data_input, Write_adress, Read_adress,
-	input Flage_Write,
+	input [31:0] data_input,address,
+	input MemRead,MemWrite,
 	output [31:0] data_Out
 	);
 
@@ -29,21 +29,20 @@ initial begin
 
 end
 
-always @ (data_input or Write_adress or Read_adress or
-	or Flage_Write )
+always @ (data_input or address or MemRead or MemWrite )
 	begin
 
 
-		if (Flage_Write)
+		if (MemWrite)
                    begin
 			
-			mem[Write_adress] = data_input;
+			mem[address] = data_input;
 
                    end
               else
                    begin
 
-                       data_Out = memory[Read_adress];
+                       data_Out = memory[address];
                    end 
 			
 	end

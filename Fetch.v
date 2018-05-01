@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-module IF(inst,instAddress,newAdress);
+module IF(inst,newAdressinstAddress);
     input wire [31:0] instAddress;
     output wire [31:0] newAdress;
     output wire [31:0] inst;

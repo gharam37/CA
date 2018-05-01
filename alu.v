@@ -32,7 +32,7 @@ always @ (in1,in2,control) begin
 		out <= in1 | in2;
 	end
 	3'b100: begin
-		out <= in2 << in1;
+		out <= in1 << in2;
 	end
 	3'b101: begin
 		out <= in1 >>in2;
@@ -46,7 +46,7 @@ always @ (in1,in2,control) begin
 		end
 	end
 	
-	default:out<=in2;
+	default:out<=in1;
 	
 	endcase
 

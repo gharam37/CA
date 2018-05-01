@@ -1,8 +1,8 @@
 `timescale 1ns / 1ps
-module IFIDReg(instOut,instIn,clk);
+module IFIDReg(instOut,inc incinstOut,incinst,instIn,clk);
     input clk;
-    input [31:0] instIn;
-    output reg [31:0] instOut;
+    input [31:0] instIn,incinst;
+    output reg [31:0] instOut,incinstOut;
 	reg [31:0] memory;
     
     
@@ -13,6 +13,7 @@ module IFIDReg(instOut,instIn,clk);
     always @ (posedge clk)
     begin
         memory = instrIn;
+        incinstOut<=incinst;
     end
     
 endmodule
