@@ -1,5 +1,5 @@
 
-module 5BitMux(out,in1,in2,select);
+module fiveBitMux(out,in1,in2,select);
     input [4:0] in1, in2;
 	input select;
 	output reg [4:0] out;

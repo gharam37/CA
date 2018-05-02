@@ -4,11 +4,11 @@ module IF(inst,newAdress,instAddress);
     input wire [31:0] instAddress;
     output wire [31:0] newAdress;
     output wire [31:0] inst;
-    const [31:0] count;
+    //reg [31:0] count;
     
-    assign count = 32'b00000000000000000000000000000100;
+    //assign count = 32'b00000000000000000000000000000100;
     InstrMem InstrMem(instAddress, inst);
-    adder adder(newAdress,instAddress,count);
+    adder adder(newAdress,instAddress, 32'b00000000000000000000000000000100);
     
 
 endmodule

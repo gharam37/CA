@@ -4,7 +4,7 @@ module SignExtender(out,in);
     output reg [31:0] out;
     always @ (in)
     begin
-        out <= {{16{in[15]}},in[15:0]};
+        out <= {{16{in[15]}},in[15]};
     end
     
 endmodule

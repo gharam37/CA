@@ -10,7 +10,7 @@ aluresultin,memdatain);
 always @ (posedge clk) begin
 	MemtoRegOut<=MemtoReg;
     RegWriteOut<=RegWrite;
-    Write_addressOut<Write_address;
+    Write_addressOut<=Write_address;
 	aluresultout = aluresultin;
 	memdataout = memdatain;
 end

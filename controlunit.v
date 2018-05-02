@@ -1,7 +1,7 @@
 
 module ControlUnit(
-    input [5:0] opCode, func,
-    output reg RegDest, Branch, MemRead ,MemtoReg, MemWrite, ALUSrc, RegWrite
+    input [5:0] opcode, func,
+    output reg RegDest, Branch, MemRead ,MemtoReg, MemWrite, ALUSrc, RegWrite,
     output reg [2:0] aluc
     );
 
@@ -203,4 +203,3 @@ if( opcode == 6'b000100) begin
 end
 
 endmodule
-

@@ -3,13 +3,13 @@ module ALU(out,in1,in2,control,zero);
 input [31:0] in1, in2;
 input [2:0] control;
 output reg [31:0] out;
-output reg zero;
+output reg zero=0;
 always @ (in1, in2, control)
 begin
 if (in1 == in2)
-zero = 1;
+zero <= 1;
 else
-zero = 0;
+zero <= 0;
 end
 
 always @ (in1,in2,control) begin

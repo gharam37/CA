@@ -7,9 +7,9 @@ module ID(Signextended, Branch, MemRead ,MemtoReg, MemWrite, ALUSrc,RegWrite,Reg
     input [4:0] write_address;
     output Branch, MemRead ,MemtoReg, MemWrite, ALUSrc,RegWrite,RegDest;
     output [2:0] aluc;
-    output reg [31:0] Read_out1, Read_out2,Signextended;
+    output wire [31:0] Read_out1,Read_out2,Signextended;
     output [4:0] addr1,addr2;
-SignExtender SignExtender( Signextended,instruction[15:0]);
+SignExtender SignExtender(Signextended,instruction[15:0]);
 ControlUnit ControlUnit(instruction[31:26], instruction[5:0], RegDest, Branch, MemRead ,MemtoReg, MemWrite, ALUSrc, RegWrite,aluc);
 
 RegisterFile RegFile(Read_out1,Read_out2,clk,write_enable,write_data,instruction[25:21],instruction[20:16],write_address);

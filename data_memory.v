@@ -3,7 +3,7 @@
 module dataMemory(
 	input [31:0] data_input,address,
 	input MemRead,MemWrite,
-	output [31:0] data_Out
+	output reg [31:0] data_Out
 	);
 
 reg [31:0] memory [255:0];
@@ -36,7 +36,7 @@ always @ (data_input or address or MemRead or MemWrite )
 		if (MemWrite)
                    begin
 			
-			mem[address] = data_input;
+			memory[address] = data_input;
 
                    end
               else
@@ -44,7 +44,7 @@ always @ (data_input or address or MemRead or MemWrite )
 
                        data_Out = memory[address];
                    end 
-			
+	
 	end
 	
 endmodule

@@ -2,7 +2,7 @@
 
 module InstrMem(
     input [31:0] Read_Adress,
-    output [31:0] Data_out
+    output reg [31:0] Data_out
     );
     
     reg [31:0] mem [255:0];
@@ -17,7 +17,7 @@ module InstrMem(
 
 always @ (*)
     begin
-     Data_out = memory[Read_Adress];
+     Data_out <= mem[Read_Adress];
     end
 endmodule
 
