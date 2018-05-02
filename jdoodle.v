@@ -407,7 +407,7 @@ module IDEXERegister(BranchOut, MemReadOut ,MemtoRegOut, MemWriteOut, ALUSrcOut,
 alucOut,Read_out1Out, Read_out2Out,SignextendedOut,incinstOut,addr1Out,addr2Out,Branch, MemRead ,MemtoReg, MemWrite,
 ALUSrc,RegWrite,RegDest,clk,aluc,Read_out1,Read_out2,Signextended,incinst,addr1,addr2);
     input Branch, MemRead ,MemtoReg, MemWrite, ALUSrc,RegWrite,RegDest,clk;
-    input [2:0] aluc;F
+    input [2:0] aluc;
     input [31:0] Read_out1, Read_out2,Signextended,incinst; 
 	input [4:0] addr1,addr2;
     output reg BranchOut, MemReadOut ,MemtoRegOut, MemWriteOut, ALUSrcOut,RegWriteOut,RegDestOut;
@@ -507,11 +507,20 @@ module Mux(out,in1,in2,select);
     input [31:0] in1, in2;
 	input select;
 	output reg [31:0] out;
+
     always @(in1,in2,select) begin
-      out <= (select == 0) ?  in1 : in2;  
+      out <= (select == 0) ?  in1 : in2; 
+      case(select)
+      1'b0:out<=in1;
+      1'b1:out<=in2;
+      default:out<=in1;
+      endcase
     end
 
 endmodule
+
+
+
 
 module PCRegister(out,in,clk);
     input clk;
