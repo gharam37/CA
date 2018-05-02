@@ -11,6 +11,7 @@ module PCRegister(out,in,clk);
     always @ (posedge clk)
     begin
         out <= in;
+        $monitor(" %b %b", in,out);
     end
     
 endmodule
